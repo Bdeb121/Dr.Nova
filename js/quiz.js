@@ -395,6 +395,7 @@ submit.addEventListener('click', function () {
 
     side1.classList.remove('active');
     over1.classList.remove('active');
+    side1.classList.add('inactive');
     over1.classList.add('inactive');
 
     Q_Box.classList.remove('active');
