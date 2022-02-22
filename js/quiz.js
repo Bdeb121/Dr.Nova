@@ -527,7 +527,7 @@ function setReviewQuestion() {
         stateR.innerHTML = '';
         for (let i = 0; i < currentState.length; i++) {
             let srt = document.createElement('p');
-            srt.innerHTML = `${numL[i]}. ${currentState[i]}`;
+            srt.innerHTML = `${numR[i]}. ${currentState[i]}`;
             stateR.appendChild(srt);
         }
     }
