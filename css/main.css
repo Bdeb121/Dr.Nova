@@ -18,21 +18,67 @@ body {
     justify-content: center;
     flex-direction: column;
 }
-.container .header {
+/* body::-webkit-scrollbar{
+    width: 16px;
+}
+body::-webkit-scrollbar-track{
+    border-radius: 8px;
+    background: #fff;
+}
+body::-webkit-scrollbar-thumb{
+    border-radius: 8px;
+    background: #292929;
+} */
+.container .logo {
     display: flex;
     flex-wrap: nowrap;
     padding: 20px 20px 10px;
     font-size: 24px;
 }
 .container .middle {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    margin: 10px 16px 16px;
+    background: #ffffff;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+.middle .header{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 10px 20px;
+}
+.middle .header .chapter{
+    font-size: 24px;
+}
+.middle .header .status{
+    align-self: center;
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+.status1{
+    background: #ffd3e2;
+    color: #df3670;
+}
+.status2{
+    background: #d5deff;
+    color: #4067f9;
+}
+.status3{
+    background: #c8f7dc;
+    color: #34c471;
+}
+.status4{
+    background: #fee4cb;
+    color: #ff942e;
+}
+.middle .cards{
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    padding: 16px;
     grid-gap: 16px 16px;
-    background: #ffffff;
-    border-radius: 20px;
-    margin: 10px 16px 16px;
-    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 10px;
 }
 .middle .card {
     position: relative;
@@ -44,7 +90,6 @@ body {
     height: 240px;
     padding: 16px 20px;
 }
-
 .middle .card:nth-child(8n+1){
     background: #fee4cb;
 }
@@ -69,7 +114,10 @@ body {
 .middle .card:nth-child(8n+8){
     background: #e9e7fd;
 }
-
+.card .class {
+    display: flex;
+    justify-content: end;
+}
 .card .text {
     display: flex;
     font-size: 24px;
@@ -83,8 +131,8 @@ body {
     display: flex;
     margin-top: 16px;
     justify-content: space-between;
+    font-weight: 500;
 }
-
 .card .bar {
     position: relative;
     display: flex;
@@ -94,15 +142,12 @@ body {
     margin-top: 8px;
     margin-bottom: 32px;
 }
-
 .card .bar span {
     position: absolute;
     height: 6px;
     border-radius: 12px;
     width: 100%;
-    background: #000;
 }
-
 .card:nth-child(8n+1) .bar span{
     background: #ff942e;
 }
@@ -127,7 +172,6 @@ body {
 .card:nth-child(8n+8) .bar span{
     background: #4f3ff0;
 }
-
 .container .footer {
     margin: 10px 20px 20px;
     display: flex;
@@ -141,12 +185,12 @@ body {
 }
 
 @media (max-width: 1100px) {
-    .container .middle {
+    .container .cards {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
 @media (max-width: 900px) {
-    .container .middle {
+    .container .cards {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     .card .text a {
@@ -155,7 +199,9 @@ body {
 }
 @media (max-width: 500px) {
     .container .middle {
-        grid-template-columns: repeat(1, minmax(0, 1fr));
         margin: 10px;
+    }
+    .container .cards {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
     }
 }
